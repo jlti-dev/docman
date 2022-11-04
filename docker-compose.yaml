@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  app:
+    #restart: unless-stopped
+    build: .
+    environment:
+      - "DEFAULT_MAIL=default@example.com"
+      - "DEFAULT_PW=Default-Passwort"
+      - "DEFAULT_KEY=b37619de46877c3848073b4d94d6ea637f6cd3060df030d77ce1b99732249e43"
+    volumes:
+      - "./data.sq3:/docker/data.sq3"
+      - "./public:/docker/public:ro"
+      - "./data:/docker/data"
+    ports:
+      - "8080:8080"
