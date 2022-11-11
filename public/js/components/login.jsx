@@ -18,21 +18,18 @@ class Login extends React.Component {
   }
   async onClick(event) {
     event.preventDefault();
+    this.props.setMessage("Login versendet")
     const token = await this.loginUser(
       this.state.user,
       this.state.pw
     );
     
     if (!token) {
-      this.setState({
-        error: "Login fehlgeschlagen"
-      })
+      this.props.setMessage("Login fehlgeschlagen")
     } else {
-      this.setState({
-        error: ""
-      });
       //komplettes token zurückgeben, da information über eigene Mail
       this.props.setToken(token);
+      this.props.setMessage("")
       this.props.navTo("download");
       
     }
@@ -64,22 +61,6 @@ class Login extends React.Component {
       </div>
       
     )
-    //<form>
-        
-    //    <label>
-    //      <p>Username</p>
-    //      <input type="text" onChange={e => this.setState({ "user": e.target.value })} />
-    //    </label>
-    //    <label>
-    //      <p>Password</p>
-    //      <input type="password" onChange={e => this.setState({ "pw": e.target.value })} />
-    //    </label>
-    //    {this.state.error && <p>{this.state.error}</p> }
-    //    <span />
-    //    <div>
-    //      <button type="submit" onClick={e => this.onClick(e)}>Submit</button>
-    //    </div>
-    //  </form>
   }
 
 }

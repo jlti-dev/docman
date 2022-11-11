@@ -85,14 +85,21 @@ a:visited {
 	color: inherit
 }
 
-header {
+.header {
 	position: sticky;
 	width: 100%;
 	top: 0;
 }
 
-footer {
+.footer {
 	position: sticky;
 	width: 100%;
 	bottom: 0;
+}
+
+.content {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 2em;
 }

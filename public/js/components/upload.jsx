@@ -26,7 +26,7 @@ class Upload extends React.Component {
     }
     async onFileUpload() {
         
-        this.setState({status: "Upload started"})
+        this.props.setMessage("Upload started")
         // Create an object of formData
         const formData = new FormData();
 
@@ -38,9 +38,10 @@ class Upload extends React.Component {
 
         const data = await this.sendFile(formData);
         if (!data || data.status > 300) {
-            this.setState({ status: "Fehler beim laden der Daten" });
+            this.props.setMessage("Fehler beim laden der Daten")
         } else {
-            this.setState({ status: "Upload erfolgreich", fetchedData: data});
+            this.setState({fetchedData: data});
+            this.props.setMessage("Upload erfolreich")
         }
     }
     render() {
