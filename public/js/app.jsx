@@ -23,8 +23,12 @@ class App extends React.Component {
     }
     render() {
         if (!this.state || !this.state.token) {
-            return <Login setToken={this.setToken.bind(this)} 
-                            navTo={this.setNavigation.bind(this)} />
+            return <div>
+                <Login setMessage={this.setMessage.bind(this)}
+                    setToken={this.setToken.bind(this)}
+                    navTo={this.setNavigation.bind(this)} />
+                <Footer message={this.state.message} />
+            </div>
         }
 
         return (
@@ -50,8 +54,8 @@ class App extends React.Component {
                             token={this.state.token} />}
                     {this.state.navTo === "link" &&
                         <Link setMessage={this.setMessage.bind(this)}
-                            email={this.state.obj.email} 
-                            token={this.state.token}/>}
+                            email={this.state.obj.email}
+                            token={this.state.token} />}
 
                 </div>
                 <Footer message={this.state.message} />

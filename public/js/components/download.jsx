@@ -38,14 +38,21 @@ class Download extends React.Component {
     }
     render(){
         if (!this.state || !this.state.fetchedData) {
-            return (<div className="row">Keine Daten vorhanden</div>)
+            //return (<div className="row">Keine Daten vorhanden</div>)
         } else if (this.state.error) {
-            return (<div className="row"> Fehler beim Laden der Daten</div>)
+            //return (<div className="row"> Fehler beim Laden der Daten</div>)
         }
         
         return(
          <div>
-            {this.state.fetchedData.map( (data) => {
+            <div className="row">
+                <div className="col-3"/>
+                <div className="col-5">
+                Hallo, 
+                hier folgt eine Erklärung! unpersonalisiert :)
+                </div>
+            </div>
+            {this.state && this.state.fetchedData && this.state.fetchedData.map( (data) => {
                 return (
                 <div key={data.filename} className="row">
                     <div className="col-3"/>

@@ -44,7 +44,7 @@ class Profil extends React.Component {
             this.props.setMessage("Keine Änderung der Daten");
         }
 
-        if (update && ! update.status > 300) {
+        if (update && update.status < 300) {
             this.props.setMessage("Daten erfolgreich geändert");
         } else {
             this.props.setMessage("Daten konnten nicht geändert werden");
@@ -77,7 +77,7 @@ class Profil extends React.Component {
                 <div className="row">
                     <div className="col-2" />
                     <div className="col-8">
-                        <h1>Hallo {this.state.fetchedData.name}</h1>
+                        <h1>Herzlich Willkommen {this.state.fetchedData.name}</h1>
                     </div>
                 </div>
 

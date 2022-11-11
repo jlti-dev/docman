@@ -3,14 +3,16 @@ class Header extends React.Component {
 
         return (
             <header>
-                <div className="row">                    
-                <div className="col-2"/>
+                <div className="row">
+                    <div className="col-2">
+
+                    </div>
                     <div className="col-2">
                         {this.props.app.state.role === "Admin" &&
                             <button onClick={() => this.props.app.setNavigation("upload")}>Upload</button>
                         }
                     </div>
-                                        <div className="col-2">
+                    <div className="col-2">
                         {this.props.app.state.role === "Admin" &&
                             <button onClick={() => this.props.app.setNavigation("user")}>Benutzer administrieren</button>
                         }
